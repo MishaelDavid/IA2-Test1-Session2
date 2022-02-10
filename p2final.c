@@ -11,9 +11,11 @@ int input_side()
 int check_scalene(int a, int b, int c)
 {
   if( a != b && a != c && b != c )
-    {return 1;}
+  {
+    return 1;
+  }
     
-     return 0;
+  return 0;
 }
 
 void output(int a, int b, int c, int isScalene)
