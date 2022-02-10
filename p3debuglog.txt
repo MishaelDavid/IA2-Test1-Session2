@@ -1,0 +1,109 @@
+gcc -g p2final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x850: file p2final.c, line 33.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2final.c:33
+33    int AB = input_side();
+(gdb) s
+input_side () at p2final.c:4
+4   { 
+(gdb) n
+6     printf("ENTER SIDE OF THE TRIANGLE\n");
+(gdb) n
+ENTER SIDE OF THE TRIANGLE
+7     scanf("%d", &side);
+(gdb) n
+8
+8     return side;
+(gdb) n
+9   }
+(gdb) n
+main () at p2final.c:34
+34    int BC = input_side();
+(gdb) s
+input_side () at p2final.c:4
+4   { 
+(gdb) 9
+Undefined command: "9".  Try "help".
+(gdb) n
+6     printf("ENTER SIDE OF THE TRIANGLE\n");
+(gdb) n
+ENTER SIDE OF THE TRIANGLE
+7     scanf("%d", &side);
+(gdb) n
+9
+8     return side;
+(gdb) n
+9   }
+(gdb) n
+main () at p2final.c:35
+35    int CA = input_side();
+(gdb) s
+input_side () at p2final.c:4
+4   { 
+(gdb) n
+6     printf("ENTER SIDE OF THE TRIANGLE\n");
+(gdb) n
+ENTER SIDE OF THE TRIANGLE
+7     scanf("%d", &side);
+(gdb) n
+8
+8     return side;
+(gdb) n
+9   }
+(gdb) n
+main () at p2final.c:36
+36    int res = check_scalene(AB, BC, CA);
+(gdb) s
+check_scalene (a=8, b=9, c=8) at p2final.c:13
+13    if( a != b && a != c && b != c )
+(gdb) n
+16       return 0;
+(gdb) n
+17  }
+(gdb) n
+main () at p2final.c:37
+37    output(AB, BC, CA, res);
+(gdb) s
+output (a=8, b=9, c=8, isScalene=0) at p2final.c:21
+21    if (isScalene == 1)
+(gdb) n
+27      printf("THE TRIANGLE WITH SIDES %d,%d,%d IS NOT SCALENE",a,b,c);
+(gdb) n
+29  }
+(gdb) n
+main () at p2final.c:38
+38    return 0;
+(gdb) n
+39  }
+(gdb) n
+__libc_start_main (main=0x564a87400848 <main>, argc=1, 
+    argv=0x7ffd502f4018, init=<optimized out>, 
+    fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffd502f4008) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 334] will be killed.
+
+Quit anyway? (y or n) y
