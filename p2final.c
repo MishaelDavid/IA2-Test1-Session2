@@ -30,10 +30,10 @@ void output(int a, int b, int c, int isScalene)
 
 int main()
 {
-  int AB = input_side();
-  int BC = input_side();
-  int CA = input_side();
-  int res = check_scalene(AB, BC, CA);
-  output(AB, BC, CA, res);
+  int a = input_side();
+  int b = input_side();
+  int c = input_side();
+  int res = check_scalene(a,b,c);
+  output(a, b, c, res);
   return 0;
 }
